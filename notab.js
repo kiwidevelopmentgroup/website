@@ -72,7 +72,7 @@ function checkF() {
 function testAdBlock() {
     fetch('https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js', {redirect: 'manual'})
         .then(function(response) {
-            if (response.type === 'opaqueredirect' || !response.ok) {
+            if (response.type === 'opaque' || !response.ok) { // Corrected 'opaqueredirect' to 'opaque'
                 throw new Error("Network response was not ok or redirected");
             }
         })
